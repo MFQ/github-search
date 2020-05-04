@@ -1,4 +1,4 @@
-This project hit Github repo search api and shows name of its repo.
+This project hit Github repo search api and shows repo names.
 
 ## Available Scripts
 
