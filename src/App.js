@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
 class App extends Component{
 
   render() {
-    const { repos, fetching, fetched } = this.props;
+    const { repos, fetching } = this.props;
     return (
       <div className="App">
         <header className="App-header">

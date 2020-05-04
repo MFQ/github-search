@@ -10,11 +10,7 @@ class SearchBar extends Component {
     }
   }
 
-  onChangeInput = e => {
-    const { searchKeyword } = this.state;
-    const newKey = e.target.value;
-    this.setState({ searchKeyword: e.target.value });
-  }
+  onChangeInput = e => this.setState({ searchKeyword: e.target.value });
 
   onBlurInput = (e) => this.props.fetchRepos(e.target.value);
 
