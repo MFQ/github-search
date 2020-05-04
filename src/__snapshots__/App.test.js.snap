@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <div>
+      <h1>
+         Search Github Repos 
+      </h1>
+      <div
+        className="input-group input-group-lg"
+      >
+        <input
+          aria-describedby="inputGroup-sizing-sm"
+          aria-label="Large"
+          className="form-control"
+          onBlur={[Function]}
+          onChange={[Function]}
+          value=""
+        />
+      </div>
+    </div>
+  </header>
+  <ul />
+</div>
+`;
