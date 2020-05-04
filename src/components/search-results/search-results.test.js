@@ -14,7 +14,7 @@ describe('SearchResults', () => {
       asks: []
     }
     const output = shallow(
-      <SearchResults repos={[]}/>
+      <SearchResults repos={[ {name: "rails"} ]}/>
     );
     expect(shallowToJson(output)).toMatchSnapshot();
   });
