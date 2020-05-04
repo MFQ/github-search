@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should render correctly 1`] = `
+<div>
+  <h1>
+     Search Github Repos 
+  </h1>
+  <InputGroup
+    size="lg"
+  >
+    <FormControl
+      aria-describedby="inputGroup-sizing-sm"
+      aria-label="Large"
+      onBlur={[Function]}
+      onChange={[Function]}
+      value=""
+    />
+  </InputGroup>
+</div>
+`;

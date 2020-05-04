@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import SearchBar from "./components/search-bar";
+import SearchResults from "./components/search-results";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { connect } from "react-redux";
+import { searchRepo } from "./actions/githubSearchRepo"
 
-export default App;
+const mapStateToProps = (store) => ({
+    repos: store.searchRepoReducer.repos,
+    fetching: store.searchRepoReducer.fetching,
+    fetched: store.searchRepoReducer.fetched,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchRepos: (keyword) => dispatch(searchRepo(keyword)),
+});
+
+class App extends Component{
+
+  render() {
+    const { repos, fetching, fetched } = this.props;
+    return (
+      <div className="App">
+        <header className="App-header">
+          <SearchBar {...this.props}/>
+        </header>
+        { fetching && "loading..." }
+        <SearchResults repos={repos}/>
+      </div>
+    );
+  }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(App)
